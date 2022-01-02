@@ -1,0 +1,30 @@
+public class Hello extends Application{
+	
+	public static void main(String[] args) {
+		launch(args);
+	}	
+  
+	@Override
+	public void start(Stage stage) throws Exception {
+  
+  //ImageView -> show picture
+  
+	  /* 
+       FileInputStream inputStream = new FileInputStream("src/Cat03.jpg");
+       Image image = new Image(inputStream);
+    */
+    
+    ImageView imageView = new ImageView(new Image(new FileInputStream("src/Cat03.jpg")));
+    
+    view.setFitHeight(200);
+    view.setFitWidth(40);
+
+    ScrollPane scrollPane = new ScrollPane();
+    scrollPane.setContent(view);
+		
+		Scene scene = new Scene(scrollPane, 300,300);
+		stage.setScene(scene);
+		stage.show();
+	}
+
+}
